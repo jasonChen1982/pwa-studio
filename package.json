@@ -1,0 +1,31 @@
+{
+  "name": "pwa-studio",
+  "version": "0.0.1",
+  "description": "a pwa learning studio",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "fix": "eslint --fix ./demos",
+    "http": "hs -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonChen1982/pwa-studio.git"
+  },
+  "keywords": [
+    "pwa",
+    "sw",
+    "service",
+    "worker"
+  ],
+  "author": "jasonChen1982",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonChen1982/pwa-studio/issues"
+  },
+  "homepage": "https://github.com/jasonChen1982/pwa-studio#readme",
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "http-server": "^0.11.1"
+  }
+}
