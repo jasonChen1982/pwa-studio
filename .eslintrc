@@ -6,7 +6,10 @@
         "RAF": true,
         "CAF": true
     },
+    "parserOptions": {
+        "ecmaVersion": 6
+    },
     "rules": {
-      "no-bitwise": 0
+        "no-bitwise": 0
     }
 }

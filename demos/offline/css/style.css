@@ -6,10 +6,7 @@ html, body {
   }
   
   h1 {
-    text-indent: 100%;
     white-space: nowrap;
-    overflow: hidden;
-    height: 197px;
   }
   
   section {
