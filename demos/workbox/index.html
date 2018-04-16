@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>首页</title>
+  <meta name="cluster" content="china">
+  <meta name="onlinetime-on">
+  <meta name="exposure-on">
+  <meta name="uc-biz-id" content="oivmp50ehofzwavn_1203" />
+  <meta name="data-fact" content="oivmp50ehofzwavn" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <script>
+    window.addEventListener('error', function (e) {
+      if (e.target === window) {
+        return;
+      }
+      var nodeName = e.target.nodeName;
+      if (typeof nodeName === 'string') {
+        nodeName = nodeName.toLowerCase();
+      } else {
+        nodeName = 'unknow_type';
+      }
+      var img = new Image();
+      var pingUrl = '//retcode.taobao.com/r.png';
+      var params = {
+        userNick: '82c22170-d4b1-11e7-8c91-0b7268cb9904',
+        times: 1,
+        tag: nodeName + '_file_load_failed',
+        file: e.target.src,
+        type: 'jserror',
+        category: 'sys',
+        msg: e.message || (nodeName + ' file load failed'),
+        sampling: 1,
+        spm: 'oivmp50ehofzwavn.c550ad40-efb4-11e7-8c10-b1df44a0ed5e'
+      };
+      var paramStr = '';
+      for (var key in params) {
+        paramStr += ('&' + key + '=' + encodeURIComponent(params[key]));
+      }
+      paramStr = paramStr.slice(1);
+      img.src = pingUrl + '?' + paramStr;
+    }, true);
+
+  </script>
+
+  <script>
+    window.__BROCCOLI_APPINFO__ = {
+      "appCode": "morphstars",
+      "appId": "oivmp50ehofzwavn",
+      "appName": "3D粒子morph动画",
+      "pageId": "c550ad40-efb4-11e7-8c10-b1df44a0ed5e",
+      "pageName": "首页",
+      "entryId": "1203",
+      "entryKey": "0495"
+    };
+    window.__BROCCOLI_CONFIG__ = {};
+    window.__BROCCOLI_EXT_CONFIG__ = {
+      "ucParams": {
+        "la": "",
+        "cp": ""
+      }
+    };
+    window.__BROCCOLI_SERVER_INFO__ = {
+      "timestamp": 1523867344662
+    };
+    window.__UC_PARAMS__ = {};
+
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js', {
+          scope: './'
+        }).then(function (reg) {
+
+          if (reg.installing) {
+            console.log('Service worker installing');
+          } else if (reg.waiting) {
+            console.log('Service worker installed');
+          } else if (reg.active) {
+            console.log('Service worker active');
+          }
+
+        }).catch(function (error) {
+          // registration failed
+          console.log('Registration failed with ' + error);
+        });
+      });
+    }
+
+  </script>
+  <style>
+    body {
+      margin: 0
+    }
+    #app {
+      margin: 50px auto;
+      width: 660px;
+      height: 450px
+    }
+
+    #app>div>span {
+      display: inline-block
+    }
+
+  </style>
+</head>
+
+<body data-fact="0495">
+  <div class="main"></div>
+
+  <script crossorigin="anonymous" type="text/javascript" src="//image.uc.cn/s/uae/g/3o/js/es6.promise.polyfill.js?v=20170720"></script>
+  <script crossorigin="anonymous" type="text/javascript" src="//image.uc.cn/s/uae/g/3o/broccoli/dll/react.min.bundle.js?v=20170720"></script>
+  <script crossorigin="anonymous" type="text/javascript" src="//image.uc.cn/s/uae/g/1y/broccoli/morphstars/index/bundle.d1ae563761c2a3028716.js"></script>
+
+</body>
+
+</html>
