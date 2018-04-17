@@ -8,43 +8,37 @@ if (workbox) {
 
 console.log(location);
 
-const hostURL = location.href;
-const cacheName = 'broccoli-assets-cache';
+const swhost = location.href;
+const home = swhost.replace('sw.js', '');
 
 workbox.precaching.precacheAndRoute([
-  '/',
-  'https://image.uc.cn/s/uae/g/3o/js/es6.promise.polyfill.js?v=20170720',
-  'https://image.uc.cn/s/uae/g/3o/broccoli/dll/react.min.bundle.js?v=20170720',
-  'https://image.uc.cn/s/uae/g/1y/broccoli/morphstars/index/bundle.d1ae563761c2a3028716.js',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/fish.json',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/uc.json',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/sm.json',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/9game.json',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/youku.json',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/fish-ball.json',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/kv.json',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/gradient.png',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/uc.svg',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/fishball.svg',
-  'https://image.uc.cn/s/uae/g/01/tofu_test/images/group.png',
+  home,
+  '//image.uc.cn/s/uae/g/3o/js/es6.promise.polyfill.js?v=20170720',
+  '//image.uc.cn/s/uae/g/3o/broccoli/dll/react.min.bundle.js?v=20170720',
+  '//image.uc.cn/s/uae/g/1y/broccoli/morphstars/index/bundle.d1ae563761c2a3028716.js',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/fish.json',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/uc.json',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/sm.json',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/9game.json',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/youku.json',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/fish-ball.json',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/kv.json',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/gradient.png',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/uc.svg',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/fishball.svg',
+  '//image.uc.cn/s/uae/g/01/tofu_test/images/group.png',
 ]);
 
 workbox.routing.registerRoute(
-  // Cache CSS files
-  /.*index\.html/,
+  // Cache image files
+  home,
   // Use cache but update in the background ASAP
-  workbox.strategies.staleWhileRevalidate({
-    // Use a custom cache name
-    cacheName,
-  })
+  workbox.strategies.staleWhileRevalidate()
 );
 
 workbox.routing.registerRoute(
   // Cache image files
   /.*\/\/image\.uc\.cn.*/,
   // Use the cache if it's available
-  workbox.strategies.cacheFirst({
-    // Use a custom cache name
-    cacheName,
-  })
+  workbox.strategies.cacheFirst()
 );
